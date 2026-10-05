@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="bn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ঢাল — নিরাপদ ইন্টারনেট গাইড</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#e9eef7;--bg2:#dfe7f5;--bg:#e6ecf6;--tx:#1d2740;--mu:#5d6b88;--ac:#2f6bff;--ac2:#14c8b4;--sh1:#fff;--sh2:#b9c4da;--bad:#ef4565;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg1:#12182b;--bg2:#0c1020;--bg:#161d33;--tx:#e8edfb;--mu:#93a0c2;--sh1:#1d2640;--sh2:#0a0e1b}}
+:root[data-theme=dark]{--bg1:#12182b;--bg2:#0c1020;--bg:#161d33;--tx:#e8edfb;--mu:#93a0c2;--sh1:#1d2640;--sh2:#0a0e1b}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Hind Siliguri',system-ui,sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2)) fixed;color:var(--tx);line-height:1.7;overflow-x:hidden;animation:pg .7s}
+@keyframes pg{from{opacity:0;transform:translateY(10px)}}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+main,nav,footer{position:relative;z-index:1}
+.w{max-width:1120px;margin:auto;padding:0 20px}section{padding:72px 0}
+h2{font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.3;margin-bottom:10px}
+.sub{color:var(--mu);max-width:640px;margin-bottom:32px}
+.card{background:var(--bg);border-radius:24px;padding:24px;box-shadow:9px 9px 20px var(--sh2),-9px -9px 20px var(--sh1);transition:.35s}
+.card:hover{transform:translateY(-6px);box-shadow:12px 14px 26px var(--sh2),-10px -10px 22px var(--sh1)}
+.in{box-shadow:inset 5px 5px 10px var(--sh2),inset -5px -5px 10px var(--sh1);border-radius:16px}
+.btn{position:relative;overflow:hidden;border:0;cursor:pointer;font:600 1rem inherit;font-family:inherit;color:var(--tx);background:var(--bg);padding:12px 24px;border-radius:50px;box-shadow:6px 6px 14px var(--sh2),-6px -6px 14px var(--sh1);transition:.25s}
+.btn:active{box-shadow:inset 4px 4px 9px var(--sh2),inset -4px -4px 9px var(--sh1);transform:scale(.97)}
+.pri{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;box-shadow:0 8px 24px #2f6bff55}
+.rp{position:absolute;border-radius:50%;background:#fff6;transform:scale(0);animation:rp .6s}@keyframes rp{to{transform:scale(4);opacity:0}}
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);transition:.3s}
+nav.s{box-shadow:0 6px 24px #0002}
+nav .w{display:flex;align-items:center;gap:12px;height:64px}
+.logo{font-weight:700;font-size:1.3rem;display:flex;gap:8px;align-items:center;margin-right:auto}
+.links{display:flex;gap:18px;font-size:.92rem}.links a{color:var(--mu);text-decoration:none;transition:.2s}.links a:hover{color:var(--ac)}
+.sm{padding:6px 14px;font-size:.85rem}
+@media(max-width:860px){.links{display:none}}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;min-height:86vh}
+@media(max-width:860px){.hero{grid-template-columns:1fr;text-align:center;padding-top:20px}.hero .row{justify-content:center}}
+.hero h1{font-size:clamp(2rem,5.4vw,3.4rem);line-height:1.25;margin-bottom:16px}
+.g{background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.tag{display:inline-block;padding:4px 14px;border-radius:50px;font-size:.85rem;color:var(--ac);margin-bottom:14px}
+.art{position:relative;aspect-ratio:1;max-width:440px;margin:auto;width:100%;transition:transform .2s}
+.art svg{width:100%;height:100%;overflow:visible}
+.fl{animation:fl 5s ease-in-out infinite}.fl2{animation:fl 6s ease-in-out -2s infinite}
+@keyframes fl{50%{transform:translateY(-14px)}}
+.glow{animation:gl 3s ease-in-out infinite}@keyframes gl{50%{filter:drop-shadow(0 0 22px #14c8b4)}}
+.chip{position:absolute;padding:8px 14px;border-radius:14px;background:var(--bg);box-shadow:6px 6px 14px var(--sh2),-6px -6px 14px var(--sh1);font-size:.85rem;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px}
+.ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;margin-bottom:12px;font-size:1.6rem}
+.rv{opacity:0;transform:translateY(34px);transition:.8s cubic-bezier(.2,.7,.2,1)}.rv.v{opacity:1;transform:none}
+.steps{counter-reset:s;display:grid;gap:14px}
+.steps li{list-style:none;display:flex;gap:14px;padding:14px 16px;align-items:flex-start}
+.steps li:before{counter-increment:s;content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;background:linear-gradient(135deg,var(--ac),var(--ac2))}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}@media(max-width:800px){.two{grid-template-columns:1fr}}
+.steps li>div{min-width:0;flex:1}
+#vm{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:20px;background:#050a18cc;backdrop-filter:blur(6px)}
+#vm.o{display:grid;animation:pg .3s}
+.vbox{position:relative;width:min(900px,100%);background:var(--bg);border-radius:22px;padding:10px;box-shadow:0 20px 60px #0008}
+.vbox .fr{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000}.vbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vmsg{padding:30px 20px;text-align:center;color:var(--mu)}
+code{background:#2f6bff22;padding:1px 8px;border-radius:8px;color:var(--ac);word-break:break-all;font-size:.9em}
+.note{margin-top:20px;padding:16px 20px;color:var(--mu);font-size:.93rem}
+#dg{width:100%;height:auto}.dash{stroke-dasharray:8 8;animation:da 1s linear infinite}@keyframes da{to{stroke-dashoffset:-16}}
+.bar{height:16px;border-radius:50px;overflow:hidden;margin:10px 0 24px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));transition:width .6s;border-radius:50px}
+.ok{animation:pop .8s}@keyframes pop{40%{transform:scale(1.04);box-shadow:0 0 50px #14c8b488}}
+.fq{margin-bottom:14px;padding:0;overflow:hidden}.fq button{all:unset;box-sizing:border-box;width:100%;padding:18px 22px;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;gap:10px}
+.fq .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}.fq.o .a{grid-template-rows:1fr}.fq .a p{overflow:hidden;padding:0 22px;color:var(--mu)}.fq.o .a p{padding-bottom:18px}
+.fq .p{transition:.3s}.fq.o .p{transform:rotate(45deg)}
+.cta{text-align:center;padding:60px 24px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border-radius:36px;position:relative;overflow:hidden}
+.cta:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#fff2;top:-100px;left:-60px;animation:fl 7s infinite}
+.cta .btn{margin-top:20px}
+footer{padding:40px 0 30px;color:var(--mu);font-size:.9rem;text-align:center}
+@media(prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style></head><body>
+<canvas id="bg"></canvas>
+<div id="app"></div>
+<div id="vm" role="dialog" aria-modal="true" aria-hidden="true"><div class="vbox"><button class="btn sm" id="vx" aria-label="Close" style="position:absolute;top:-46px;right:0">✕</button><div id="vc"></div></div></div>
+<script>
+/* =====================================================
+   ★ আপনার লিংক এখানে বসান (শুধু '' এর ভেতরে) ★
+   ===================================================== */
+const VIDEO_URL='https://drive.google.com/file/d/11RMR748fMacjmwZd-3YDjlzcIrDBk-zs/view?usp=drivesdk';   // ← এখানে ভিডিও লিংক দিন। যেমন: 'https://www.youtube.com/watch?v=abc123XYZ00'
+                      //   অথবা Google Drive: 'https://drive.google.com/file/d/FILE_ID/view'
+/* ===================================================== */
+/* ---------- State & helpers ---------- */
+let L='bn',filt=true;
+try{L=localStorage.getItem('l')||'bn'}catch(e){}
+const T=(b,e)=>L==='bn'?b:e;
+const I={shield:'<path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/>',moon:'<path d="M21 13A9 9 0 1111 3a7 7 0 0010 10z"/>',lock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/>'};
+const svg=(p,s=22)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+
+/* ---------- Data ---------- */
+const feats=[['🔞','অ্যাডাল্ট কনটেন্ট','Adult Content','অনুপযুক্ত সাইট ব্লক করতে সাহায্য করে।','Helps block inappropriate sites.','#ef4565'],
+['🎰','জুয়া','Gambling','বেটিং ও জুয়ার সাইটে প্রবেশ কমায়।','Reduces access to betting sites.','#f5a524'],
+['🎣','ফিশিং','Phishing','ভুয়া লগইন পেজ চেনা ডোমেইন ঠেকায়।','Blocks known fake login domains.','#2f6bff'],
+['🦠','ম্যালওয়্যার','Malware','ক্ষতিকর সফটওয়্যারের ঠিকানা আটকায়।','Stops known malicious hosts.','#8b5cf6'],
+['📢','ক্ষতিকর বিজ্ঞাপন','Harmful Ads','বিপজ্জনক বিজ্ঞাপন নেটওয়ার্ক কমায়।','Cuts risky ad networks.','#14c8b4']];
+/* ===== লোগো ও সোশ্যাল লিংক এখানে দিন / Logo & social links ===== */
+const LOGO_URL='';   // যেমন 'https://yoursite.com/logo.png' (খালি থাকলে ডিফল্ট শিল্ড আইকন)
+const LogoMark=n=>LOGO_URL?`<img src="${LOGO_URL}" alt="${T('ঢাল','Dhal')}" style="height:${n+6}px;width:auto;max-width:140px;object-fit:contain">`:`<span class="g">${svg(I.shield,n)}</span>`;
+const ADNS='adult-filter-dns.cleanbrowsing.org',CP='%CP%';
+function embedUrl(u){u=(u||'').trim();if(!u)return'';let m;
+if(m=u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/))([\w-]{11})/))return'https://www.youtube-nocookie.com/embed/'+m[1]+'?rel=0';
+if(m=u.match(/drive\.google\.com\/file\/d\/([\w-]+)/)||u.match(/drive\.google\.com\/(?:open|uc)\?(?:.*&)?id=([\w-]+)/))return'https://drive.google.com/file/d/'+m[1]+'/preview';
+return''}
+function fbCopy(t){const a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0;top:0';document.body.appendChild(a);a.focus();a.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}a.remove();return ok}
+async function copyText(t){try{await navigator.clipboard.writeText(t);return true}catch(e){return fbCopy(t)}}
+const android=[['সেটিংস > নেটওয়ার্ক ও ইন্টারনেট (বা সংযোগ) এ যান।','Open Settings > Network & internet (or Connections).'],['“Private DNS” খুঁজে খুলুন (মডেলভেদে নাম সামান্য আলাদা)।','Find “Private DNS” (name varies by phone).'],['“Private DNS provider hostname” বেছে লিখুন: '+`<code>${ADNS}</code>`+CP,'Choose “Private DNS provider hostname” and enter: '+`<code>${ADNS}</code>`+CP],['সেভ করে একটি সাইট খুলে পরীক্ষা করুন।','Save, then test by opening a site.']];
+const win=[['সেটিংস > নেটওয়ার্ক ও ইন্টারনেট > Wi-Fi/Ethernet > হার্ডওয়্যার প্রপার্টিজ।','Settings > Network & internet > Wi-Fi/Ethernet > Hardware properties.'],['“DNS server assignment” এ Edit > Manual > IPv4 চালু করুন।','Edit “DNS server assignment” > Manual > enable IPv4.'],['Preferred: <code>1.1.1.3</code>, Alternate: <code>1.0.0.3</code>','Preferred: <code>1.1.1.3</code>, Alternate: <code>1.0.0.3</code>'],['সেভ করে ব্রাউজার রিস্টার্ট করুন।','Save and restart your browser.']];
+const rt=[['রাউটারের অ্যাডমিন পেজে লগইন করুন (ঠিকানা সাধারণত রাউটারের গায়ে লেখা)।','Log in to your router admin page (address is usually on the label).'],['WAN/Internet বা DHCP সেটিংসে DNS অংশ খুঁজুন।','Find DNS under WAN/Internet or DHCP settings.'],['DNS হিসেবে দিন: <code>1.1.1.3</code> ও <code>1.0.0.3</code>','Set DNS to <code>1.1.1.3</code> and <code>1.0.0.3</code>'],['অ্যাডমিন পাসওয়ার্ড বদলান ও সেভ করুন; সব ডিভাইসে কভার হবে।','Change the admin password and save; all devices are covered.']];
+const fam=[['👨‍👩‍👧','খোলামেলা আলোচনা','Talk openly','নিষেধের আগে কেন ঝুঁকি আছে বুঝিয়ে বলুন।','Explain the “why” before the “no”.'],['⏰','স্ক্রিন-টাইম নিয়ম','Screen-time rules','পরিবার মিলে সময় ঠিক করুন।','Agree on limits together.'],['🧩','একাধিক স্তর','Multiple layers','DNS ফিল্টার, SafeSearch ও পেরেন্টাল কন্ট্রোল একসাথে।','Combine DNS, SafeSearch and parental controls.']];
+const faq=[['DNS ফিল্টারিং কি ১০০% নিরাপত্তা দেয়?','Is DNS filtering 100% safe?','না। এটি একটি অতিরিক্ত সুরক্ষা স্তর, যা অনেক পরিচিত ক্ষতিকর ডোমেইন কমাতে সাহায্য করে। তবে VPN, অন্য DNS সেটিংস বা নতুন ডোমেইন দিয়ে এড়ানো সম্ভব হতে পারে।','No. It is an extra protection layer that helps reduce many known harmful domains. It can still be bypassed, e.g. via a VPN, other DNS settings, or brand-new domains.'],
+['এটি কি ইন্টারনেট স্লো করে?','Does it slow the internet?','সাধারণত লক্ষণীয় পার্থক্য হয় না; ফল নির্ভর করে আপনার নেটওয়ার্ক ও প্রোভাইডারের ওপর।','Usually no noticeable difference; it depends on your network and provider.'],
+['কোন DNS প্রোভাইডার ব্যবহার করব?','Which provider should I use?','Cloudflare Family, CleanBrowsing ইত্যাদি পরিচিত বিকল্প। ব্যবহারের আগে তাদের অফিসিয়াল সাইটে সর্বশেষ ঠিকানা ও নীতি দেখে নিন।','Cloudflare Family and CleanBrowsing are known options. Check their official sites for current addresses and policies.'],
+['কোনো সাইট ভুল করে ব্লক হলে?','A site is blocked by mistake?','অস্থায়ীভাবে DNS সেটিং বদলে দেখুন বা প্রোভাইডারের রিপোর্ট ফর্ম ব্যবহার করুন।','Try temporarily changing the DNS setting, or use the provider’s report form.']];
+
+/* ---------- Components ---------- */
+const Sec=(id,t1,t2,sub1,sub2,body)=>`<section id="${id}"><div class="w rv"><h2>${T(t1,t2)}</h2><p class="sub">${T(sub1,sub2)}</p>${body}</div></section>`;
+const Steps=a=>`<ol class="steps">${a.map(s=>`<li class="card in" style="box-shadow:inset 5px 5px 10px var(--sh2),inset -5px -5px 10px var(--sh1)"><div>${T(s[0],s[1]).replace('%CP%',`<div style="margin-top:10px"><button class="btn sm cp" data-copy="${ADNS}">📋 ${T('কপি করুন','Copy')}</button></div>`)}</div></li>`).join('')}</ol>`;
+function render(){
+const h=`
+<nav id="nv"><div class="w"><div class="logo">${LogoMark(28)}${LOGO_URL?'':T('ঢাল','Dhal')}</div>
+<div class="links"><a href="#feat">${T('সুরক্ষা','Protection')}</a><a href="#dns">DNS</a><a href="#android">Android</a><a href="#pc">PC</a><a href="#router">${T('রাউটার','Router')}</a><a href="#faq">FAQ</a></div>
+<button class="btn sm" id="lg">${L==='bn'?'EN':'বাং'}</button><button class="btn sm" id="th" aria-label="theme">${svg(I.moon,18)}</button></div></nav>
+<main>
+<section style="padding-top:30px"><div class="w hero"><div class="rv"><span class="tag card in">🛡️ ${T('বাংলায় ডিজিটাল সেফটি গাইড','Digital safety guide in Bengali')}</span>
+<h1>${T('নিরাপদ ইন্টারনেট, <span class="g">শুরু হোক একটি ছোট সেটিংস থেকেই</span>','Safer internet, <span class="g">starting with one small setting</span>')}</h1>
+<p class="sub">${T('DNS ফিল্টারিং ও কিছু সহজ অভ্যাসে নিজের ও পরিবারের জন্য অনলাইনে একটি অতিরিক্ত সুরক্ষা স্তর যোগ করুন।','Add an extra layer of protection for you and your family with DNS filtering and a few simple habits.')}</p>
+<div class="row"><a href="#android"><button class="btn pri">${T('সেট আপ করুন','Set up')} →</button></a><a href="#dns"><button class="btn">${T('DNS কী?','What is DNS?')}</button></a></div></div>
+<div class="art" id="art"><svg viewBox="0 0 400 400"><defs><linearGradient id="gr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f6bff"/><stop offset="1" stop-color="#14c8b4"/></linearGradient></defs>
+<g stroke="url(#gr)" stroke-width="1.5" opacity=".6" class="dash"><line x1="200" y1="200" x2="50" y2="80"/><line x1="200" y1="200" x2="350" y2="100"/><line x1="200" y1="200" x2="60" y2="330"/><line x1="200" y1="200" x2="345" y2="320"/></g>
+<g fill="#14c8b4"><circle cx="50" cy="80" r="7"/><circle cx="350" cy="100" r="7"/><circle cx="60" cy="330" r="7"/><circle cx="345" cy="320" r="7"/></g>
+<circle cx="200" cy="200" r="150" fill="none" stroke="url(#gr)" stroke-dasharray="3 9" opacity=".4"/>
+<g class="fl glow"><path d="M200 70l105 40v80c0 70-45 118-105 140-60-22-105-70-105-140v-80z" fill="url(#gr)"/><path d="M200 70l105 40v80c0 70-45 118-105 140z" fill="#fff" opacity=".14"/>
+<rect x="165" y="190" width="70" height="55" rx="10" fill="#fff"/><path d="M178 190v-14a22 22 0 0144 0v14" fill="none" stroke="#fff" stroke-width="9"/><circle cx="200" cy="215" r="7" fill="#2f6bff"/></g></svg>
+<div class="chip fl2" style="top:6%;right:0">✅ ${T('নিরাপদ','Secure')}</div><div class="chip fl" style="bottom:8%;left:0">🔒 DNS</div></div></div></section>
+
+<section id="feat"><div class="w rv"><h2>${T('যেসব ঝুঁকি কমাতে সাহায্য করে','Risks it helps reduce')}</h2><p class="sub">${T('এটি সম্পূর্ণ সমাধান নয়, বরং একটি সহায়ক স্তর।','Not a complete solution — a helpful layer.')}</p>
+<div class="grid">${feats.map((f,i)=>`<div class="card rv" style="transition-delay:${i*80}ms"><div class="ic in" style="color:${f[5]}">${f[0]}</div><h3>${T(f[1],f[2])}</h3><p style="color:var(--mu)">${T(f[3],f[4])}</p></div>`).join('')}</div></div></section>
+
+${Sec('dns','DNS কীভাবে কাজ করে?','How does DNS work?','DNS হলো ইন্টারনেটের ফোনবুক: নাম থেকে আইপি ঠিকানা খুঁজে দেয়। বোতাম চেপে ফিল্টার চালু/বন্ধ করে দেখুন।','DNS is the internet’s phonebook: it turns names into IP addresses. Toggle the filter below.',
+`<div class="card"><div class="row" style="margin-bottom:14px"><button class="btn ${filt?'pri':''}" id="ft">${filt?T('ফিল্টার চালু','Filter ON'):T('ফিল্টার বন্ধ','Filter OFF')}</button></div>
+<svg id="dg" viewBox="0 0 700 220"><text x="60" y="30" text-anchor="middle" fill="var(--mu)" font-size="14">${T('আপনার ডিভাইস','Your device')}</text><text x="350" y="30" text-anchor="middle" fill="var(--mu)" font-size="14">DNS</text><text x="640" y="30" text-anchor="middle" fill="var(--mu)" font-size="14">${T('ওয়েবসাইট','Websites')}</text>
+<line class="dash" x1="100" y1="110" x2="310" y2="110" stroke="#2f6bff" stroke-width="3"/>
+<line class="dash" x1="390" y1="80" x2="590" y2="60" stroke="#14c8b4" stroke-width="3"/>
+<line class="${filt?'':'dash'}" x1="390" y1="140" x2="590" y2="170" stroke="${filt?'#ef4565':'#f5a524'}" stroke-width="3" ${filt?'stroke-dasharray="4 6"':''}/>
+<circle cx="60" cy="110" r="38" fill="var(--bg)" stroke="#2f6bff" stroke-width="3"/><text x="60" y="118" text-anchor="middle" font-size="26">📱</text>
+<circle cx="350" cy="110" r="42" fill="url(#gr)" class="glow"/><text x="350" y="120" text-anchor="middle" font-size="28">🧭</text>
+<circle cx="640" cy="60" r="30" fill="var(--bg)" stroke="#14c8b4" stroke-width="3"/><text x="640" y="68" text-anchor="middle" font-size="22">🌐</text>
+<circle cx="640" cy="170" r="30" fill="var(--bg)" stroke="${filt?'#ef4565':'#f5a524'}" stroke-width="3"/><text x="640" y="178" text-anchor="middle" font-size="22">${filt?'🚫':'⚠️'}</text>
+<text x="640" y="214" text-anchor="middle" fill="${filt?'#ef4565':'#f5a524'}" font-size="13">${filt?T('পরিচিত ক্ষতিকর → ব্লক','Known harmful → blocked'):T('ফিল্টার ছাড়া → খোলা','No filter → reachable')}</text>
+<text x="640" y="100" text-anchor="middle" fill="#14c8b4" font-size="13">${T('নিরাপদ → চালু','Safe → loads')}</text></svg></div>`)}
+
+${Sec('filter','DNS ফিল্টারিং ব্যাখ্যা','DNS filtering explained','ডোমেইনের নাম দেখে সিদ্ধান্ত নেওয়া হয়।','Decisions are made on the domain name.',
+`<div class="two"><div class="card"><h3>${T('কীভাবে সাহায্য করে','How it helps')}</h3><p style="color:var(--mu)">${T('আপনি কোনো সাইটে যেতে চাইলে DNS প্রোভাইডার ডোমেইনটি তাদের তালিকার সাথে মেলায়। পরিচিত ক্ষতিকর হলে সংযোগ আর হয় না। এটি সব ডিভাইসে একসাথে কাজ করতে পারে।','When you visit a site, the DNS provider checks the domain against its lists. If it is known to be harmful, the connection is not made. It can cover many devices at once.')}</p></div>
+<div class="card"><h3>${T('সীমাবদ্ধতা','Limits')}</h3><p style="color:var(--mu)">${T('DNS ফিল্টারিং ১০০% নিশ্চয়তা নয়। VPN, বিকল্প DNS, অ্যাপের নিজস্ব সেটিং বা নতুন ডোমেইন এটি এড়িয়ে যেতে পারে। তাই এটিকে অন্য সুরক্ষার সাথে ব্যবহার করুন।','DNS filtering is not a guarantee. VPNs, alternative DNS, in-app settings or brand-new domains may bypass it, so use it alongside other protections.')}</p></div></div>`)}
+
+${Sec('android','Android Private DNS গাইড','Android Private DNS guide','প্রায় ২ মিনিটের কাজ।','About a two-minute job.',Steps(android)+`<div class="row" style="margin-top:22px"><button class="btn pri" id="vb">▶ ${T('Set up ভিডিও দেখুন','Watch setup video')}</button></div>`)}
+${Sec('pc','Windows / PC DNS গাইড','Windows / PC DNS guide','Windows 11 এর ধাপ; Windows 10 এ মেনু সামান্য আলাদা।','Steps for Windows 11; Windows 10 menus differ slightly.',Steps(win))}
+${Sec('router','রাউটার / Wi-Fi সুরক্ষা','Router / Wi-Fi protection','একবার রাউটারে দিলে বাসার সব ডিভাইস কভার হয়।','Set once on the router to cover every device at home.',Steps(rt))}
+
+${Sec('search','SafeSearch ও YouTube Restricted Mode','SafeSearch & YouTube Restricted Mode','সার্চ ও ভিডিওতে অনুপযুক্ত ফল কমানোর অতিরিক্ত স্তর।','Another layer that reduces inappropriate search and video results.',
+`<div class="two"><div class="card"><h3>🔎 Google SafeSearch</h3><p style="color:var(--mu)">${T('Google সার্চ সেটিংস > SafeSearch ফিল্টার চালু করুন। সাইন-ইন করা অ্যাকাউন্টে এটি ধরে রাখা যায়।','Google Search settings > turn on SafeSearch filters. Signed-in accounts can keep it on.')}</p></div>
+<div class="card"><h3>▶️ YouTube Restricted Mode</h3><p style="color:var(--mu)">${T('YouTube প্রোফাইল > সেটিংস > Restricted Mode চালু করুন। এটি স্বয়ংক্রিয় ফিল্টার, তাই কিছু কনটেন্ট এড়িয়ে যেতে পারে।','YouTube profile > Settings > turn on Restricted Mode. It is automated, so some content may slip through.')}</p></div></div>`)}
+
+${Sec('family','পরিবারের সুরক্ষা','Family safety','প্রযুক্তির পাশাপাশি দরকার আস্থা ও আলোচনা।','Technology works best with trust and conversation.',
+`<div class="grid">${fam.map(f=>`<div class="card"><div class="ic in">${f[0]}</div><h3>${T(f[1],f[2])}</h3><p style="color:var(--mu)">${T(f[3],f[4])}</p></div>`).join('')}</div>`)}
+
+<section id="faq"><div class="w rv"><h2>${T('সচরাচর জিজ্ঞাসা','FAQ')}</h2><p class="sub"></p>${faq.map(f=>`<div class="card fq"><button>${T(f[0],f[1])}<span class="p">＋</span></button><div class="a"><p>${T(f[2],f[3])}</p></div></div>`).join('')}</div></section>
+
+<section><div class="w rv"><div class="cta"><h2>${T('আজই প্রথম ধাপটি নিন','Take the first step today')}</h2><p>${T('একটি সেটিং বদলাতে এক মিনিটও লাগে না।','Changing one setting takes under a minute.')}</p><a href="#android"><button class="btn" style="color:#2f6bff">${T('এখনই শুরু করুন','Start now')} →</button></a></div></div></section>
+
+${Sec('about','আমাদের সম্পর্কে','About','','',`<div class="card"><p style="color:var(--mu)">${T('“ঢাল” একটি স্বাধীন শিক্ষামূলক প্রকল্প, যার লক্ষ্য সহজ বাংলায় ডিজিটাল নিরাপত্তার ধারণা পৌঁছে দেওয়া। এটি কোনো DNS সেবার বিজ্ঞাপন নয়; উল্লিখিত ঠিকানা ব্যবহারের আগে প্রোভাইডারের অফিসিয়াল তথ্য যাচাই করুন।','“Dhal” is an independent educational project bringing digital-safety basics to Bengali readers. It is not an ad for any DNS service; verify addresses with the provider’s official docs before use.')}</p></div>`)}
+</main>
+<footer><div class="w"><div class="logo" style="justify-content:center;margin-bottom:8px">${LogoMark(24)}${LOGO_URL?'':T('ঢাল','Dhal')}</div>${T('নিরাপদ ইন্টারনেট সবার অধিকার। এটি একটি অতিরিক্ত সুরক্ষা স্তর, পূর্ণ নিশ্চয়তা নয়।','A safer internet for everyone. An extra layer of protection, not a guarantee.')}<br>© 2026 All rights reserved - Developer by Robin</div></footer>`;
+document.getElementById('app').innerHTML=h;bind()}
+
+/* ---------- Behaviour ---------- */
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function bind(){
+const $=s=>document.querySelectorAll(s);
+const io=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('v'),io.unobserve(x.target))),{threshold:.12});
+$('.rv').forEach(e=>io.observe(e));
+$('.btn').forEach(b=>b.addEventListener('click',e=>{if(RM)return;const r=b.getBoundingClientRect(),s=document.createElement('span');s.className='rp';const d=Math.max(r.width,r.height)/4;s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;b.appendChild(s);setTimeout(()=>s.remove(),600)}));
+lg.onclick=()=>{L=L==='bn'?'en':'bn';document.documentElement.lang=L;try{localStorage.setItem('l',L)}catch(e){}const y=scrollY;render();scrollTo(0,y)};
+th.onclick=()=>{const r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);r.dataset.theme=d?'light':'dark'};
+ft.onclick=()=>{filt=!filt;const y=scrollY;render();scrollTo(0,y)};
+$('.fq button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('o'));
+$('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{const ok=await copyText(b.dataset.copy);b.firstChild.nodeValue=ok?'✅ '+T('কপি হয়েছে','Copied'):'⚠️ '+T('কপি হয়নি, হাতে কপি করুন','Copy failed — copy manually');setTimeout(()=>{b.firstChild.nodeValue='📋 '+T('কপি করুন','Copy')},1800)}));
+document.getElementById('vb').onclick=openVideo;
+const nv=document.getElementById('nv');onscroll=()=>nv.classList.toggle('s',scrollY>10);
+const a=document.getElementById('art');
+if(!RM)addEventListener('pointermove',e=>{const x=(e.clientX/innerWidth-.5)*16,y=(e.clientY/innerHeight-.5)*16;a.style.transform=`perspective(800px) rotateY(${x}deg) rotateX(${-y}deg)`;mx=e.clientX;my=e.clientY},{passive:true});
+}
+let mx=-999,my=-999;
+const vm=document.getElementById('vm'),vc=document.getElementById('vc');
+function openVideo(){const e=embedUrl(VIDEO_URL);
+vc.innerHTML=e?`<div class="fr"><iframe src="${e}" title="Setup video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p class="vmsg" style="padding:12px">${T('ভিডিও না চললে','If the video does not load')}: <a href="${VIDEO_URL}" target="_blank" rel="noopener" style="color:var(--ac)">${T('নতুন ট্যাবে খুলুন','open in a new tab')}</a></p>`:`<div class="vmsg">🎬 ${T('ভিডিও লিংক এখনো যোগ করা হয়নি।','The video link has not been added yet.')}<br><small>${T('কোডে <code>VIDEO_URL</code> এ YouTube বা Google Drive লিংক বসান।','Set a YouTube or Google Drive link in <code>VIDEO_URL</code> in the code.')}</small></div>`;
+vm.classList.add('o');vm.setAttribute('aria-hidden','false')}
+function closeVideo(){vm.classList.remove('o');vm.setAttribute('aria-hidden','true');vc.innerHTML=''}
+document.getElementById('vx').onclick=closeVideo;vm.addEventListener('click',e=>{if(e.target===vm)closeVideo()});addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
+/* ---------- Particle network ---------- */
+(function(){const c=document.getElementById('bg'),x=c.getContext('2d');let w,h,P=[];
+function rs(){w=c.width=innerWidth;h=c.height=innerHeight;const n=RM?0:Math.min(70,Math.floor(w*h/18000));P=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))}
+function f(){x.clearRect(0,0,w,h);const dk=getComputedStyle(document.body).color.match(/\d+/g)[0]>150,col=dk?'20,200,180':'47,107,255';
+P.forEach((p,i)=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;
+x.fillStyle=`rgba(${col},.7)`;x.beginPath();x.arc(p.x,p.y,2,0,6.3);x.fill();
+for(let j=i+1;j<P.length;j++){const q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){x.strokeStyle=`rgba(${col},${.22*(1-d/130)})`;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}
+const d=Math.hypot(p.x-mx,p.y-my);if(d<160){x.strokeStyle=`rgba(${col},.5)`;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(mx,my);x.stroke()}});
+if(!document.hidden)requestAnimationFrame(f);else setTimeout(f,500)}
+addEventListener('resize',rs);rs();if(!RM)f();})();
+render();
+</script></body></html>
